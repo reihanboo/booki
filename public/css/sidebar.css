@@ -1,0 +1,38 @@
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* height: 100vh; */
+  width: 15%;
+  transition: width 0.3s ease;
+  overflow: hidden; /* Add this line */
+}
+
+#sidebar.minimized {
+  width: 2%;
+}
+
+#sidebar-minimized {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2%;
+  z-index: 1;
+}
+
+#sidebar-minimized a {
+  display: none; /* Hide the links when the sidebar is minimized */
+}
+
+#sidebar.minimized #sidebar-minimized a {
+  display: inline-block; /* Show the links when the sidebar is minimized */
+}
+
+#sidebar.minimized #sidebar-minimized::before {
+  transform: translateY(-50%) rotate(90deg);
+}

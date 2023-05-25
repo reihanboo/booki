@@ -1,0 +1,13 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 15%;
+  height: 60px;
+  width: 85%;
+  transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+#navbar.minimized {
+  left: 2%;
+  width: calc(100% - 2%);
+}
