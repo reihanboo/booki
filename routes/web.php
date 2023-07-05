@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NoteController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -14,8 +17,12 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/', [DashboardController::class, 'index']);
+
+Route::get('/courses', [CourseController::class, 'index']);
+
+Route::get('/calendar', [CalendarController::class, 'index']);
+Route::get('/calendar/deadlines', [CalendarController::class, 'deadlines']);
+Route::get('/calendar/events', [CalendarController::class, 'events']);
+
+Route::get('/note', [NoteController::class, 'index']);
